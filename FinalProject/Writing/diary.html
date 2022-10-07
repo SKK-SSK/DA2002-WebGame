@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>  <!-- head -->
+      <title>
+        My Weekly Progress Diary
+      </title>
+      <link rel="stylesheet" href="style.css">
+      <meta charset="utf-8"/>
+    </head>
+
+    <body> <!-- body -->
+      <header>
+        <h1> My Weekly Progress Diary </h1>
+      </header>
+      <br>
+      <p>To start my project, I decided the type and came up with a rough idea of the content. I like to play games, so I want to make a small and common game. It is basically a basket moving round to collect the items (coins/bombs etc.) falling from the top.</p>
+      <p>Firstly I designed the main page for my app which should have grid layout according to the requirements. Based on homework03, I made some changes on the looking (e.g. beautiful background, size of different sections) and placed a canvas in the article element. At first, I found the canvas is only half of the article element. To solve this problem, I made width=height="100%" for class mySVGCanvans in CSS file. Then I wrote several rules of the game using unordered list and created some buttons and time/point bar that may be used during the game. I think I have done the interface part so far.</p>
+      <br>
+      <p>I started to work on JavaScript file. To create the game objects, I tried filling a SVG graph with an image but failed. So I found a function called <a href="https://dmitrybaranovskiy.github.io/raphael/reference.html#Paper.image">paper.image</a> which was useful.</p>
+      <br>
+      <p>Then I created 3 functions generating falling items and set time interval for them. Inside the function, I draw a simple SVG graph(circle/rectangle) and set time interval for a falling function which animates the item and checks collisions. Here I used what we have learned in previous class challenges(another way to animate the object).</p>
+      <p>I also added a start button and a timer which will round to seconds. Therefore I wrote 3 functions: startGame, endGame and Dead.</p>
+      <p>However, when I ran the game, after a while I got uncaught error but the game worked well (sometimes got bugs). I guess it was because there would be the same object created before it was removed. Then I created arrays for each item(coin,rubbish and bomb) and initialized each element in the array in the generating functions. But it still worked badly.</p>
+      <br>
+      <p>This time I tried adding xpos property to the object instead of using getBBox function. And I <a href="https://dmitrybaranovskiy.github.io/raphael/reference.html#Element.clone">cloned</a> the item to an element in array in generating function. Now no errors come out but there are still some bugs.</p>
+      <p>I found that if I made the speed of falling slower, then there would be no bugs when it was running. To make collision detection better, I made small changes on the way of defining collision.</p>
+      <p>Then I added music for background and collection. I also added 2 buttons. One is for contolling the bgm and the other one is for restarting the game. I added the best score function as well.</p>
+      <p>Next week I may try to work on multi-player and levels of difficulty. I wish I can make it:)</p>
+      <br>
+      <p>I designed 3 difficulty levels (changing the controlling variables) that the player can choose using radio buttons.</p>
+      <br>
+      <p>To save storage, I made the program to initialize the arrays every time the game start.</p>
+      <p>Next I considered about multi-player, but I thought it might not be suitbale for my game. Instead, I tried to store the username and best score in the browser and created a leaderboard <a href="https://www.w3schools.com/js/js_api_web_storage.asp">with the help of W3School.</a></p>
+      <br>
+      <p>I made a small change on the layout design and added several lines to initialize the items in local storage when using a different browser.</p>
+    </body>
+</html>

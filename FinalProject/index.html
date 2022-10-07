@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>My Final Project - Coin Collector</title>
+        <script type="text/javascript" src="raphael.js"></script>
+        <script defer type="text/javascript" src="script.js">
+        </script>
+    </head>
+
+  <body>
+    
+    <div class="container">
+
+      <nav class="sidebar">
+        <h4>Rules</h4>
+        <ul>
+          <li>Control the basket by dragging it around to collect the items falling down from the top.</li>
+          <li>When you collect a coin, 1 point will be added.</li>
+          <li>When you collect rubbish, 1 point will be subtracted.</li>
+          <li>When you collect a bomb, you will die.</li>
+          <li>When time is up, check how many points you got!</li>
+        </ul>
+        <br>
+        <h4>Leaderboard</h4>
+        <ol>
+          <li id="FirstPlace">Lily 8</li>
+          <li id="SecondPlace">Ciel 7</li>
+          <li id="ThirdPlace">Hans 5</li>
+        </ol>
+      </nav>
+
+      <article class="content" id="article">
+        <div id="mySVGCanvas"> </div>
+      </article>
+
+      <aside class="sidebar" id="aside">
+        <!-- Timer -->
+        <!-- Score -->
+        <h4>Your score:</h4>
+        <p id="score">0</p>
+        <br>
+        <h4>Your Best score:</h4>
+        <p id="bestScore">0</p>
+        <br>
+        <h4>Time left:</h4>
+        <p id="time">60</p>
+      </aside>
+
+      <footer class="footer">
+        <!-- function buttons -->
+        <button id="start">Start/End</button>
+        <button id="restart">Restart</button>
+        <button id="bgm">Background Music</button>
+        <input type="radio" id="level1" checked="true" value="easy" name="level">
+        <label>Easy</label>
+        <input type="radio" id="level2" value="medium" name="level">
+        <label>Medium</label>
+        <input type="radio" id="level3" value="hard" name="level">
+        <label>Hard</label>
+      </footer>
+    </div>
+  
+
+  </body>
+</html>

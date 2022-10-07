@@ -1,0 +1,60 @@
+html, body {
+  height:100%;
+  width:100%;
+  background-image: url("https://media.istockphoto.com/photos/pink-and-orange-abstract-art-painted-background-picture-id1130844152?k=20&m=1130844152&s=612x612&w=0&h=eMf4Lg6XiZG3-SnHFHJSn3YzrUZW6LSdK7GYrprZuMk=");
+  background-size: cover;
+}
+
+/* Sections of Layout
+-------------------------------------- */
+/* Generic styles for demo purposes
+-------------------------------------- */
+.container {
+  font-family: Helvetica, Arial, sans-serif;
+  height:98%;
+  width:98%;
+}
+
+.container > * {
+  padding: 1px;
+}
+
+/* Layout is stacked vertically by default (for narrower viewports), so give some breathing room between the sections. */
+/* Select all elements where parent is a container */
+.container > * {
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+/* Now let's apply grid for wider viewports. */
+@media screen and (min-width: 40em) {
+  .container > * {
+    margin-bottom: 0;
+  }
+  /* Define the grid */
+  .container {
+    display: grid;
+    grid-template-columns: 18% 68% 10%;
+    grid-gap: 1% 1%;
+    grid-template-rows: 90% auto;
+  }
+  /* Place items on the grid */
+  .sidebar {
+    grid-row-end: span 2;
+    text-align: center;
+    border-style: double;
+  }
+  .content {
+    grid-column: 2;
+    border-style: dotted;
+  }
+  .footer {
+    border-style: solid;
+    text-align: center;
+  }
+}
+
+#mySVGCanvas {
+  width: 100%;
+  height: 100%;
+}
